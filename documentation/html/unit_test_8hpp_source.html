@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>lib_CPP_emb:  Fichier source de /mnt/g/Mon Drive/UnitTest_emb/include/unitTest.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">lib_CPP_emb
+   </div>
+   <div id="projectbrief">CeprojetestunelibrairieC++regroupantdesfonctionsutilespourledéveloppementd&#39;applicationsembarquées.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">unitTest.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="unit_test_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __UNIT_TEST_HPP__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __UNIT_TEST_HPP__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#a13fb650bc56807117ccc8c53d4c957c9">   11</a></span>&#160;<span class="preprocessor">#define TEST(testGroup, testName) \</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">    class testGroup##testName : public UnitTest { \</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">    public: \</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">        testGroup##testName() : UnitTest(#testGroup, #testName) {} \</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">    private: \</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">        void do_runTest(bool *result) override; \</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    }; \</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    testGroup##testName testGroup##testName##Instance; \</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    void testGroup##testName::do_runTest(bool *result)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#ae9244bfbda562e8b798789b001993fa5">   21</a></span>&#160;<span class="preprocessor">#define ASSERT_TRUE(condition) if(!(condition)) { assert_error(&quot;expected true&quot;, __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#a8197fa52f3538588d20d8af4834c9003">   22</a></span>&#160;<span class="preprocessor">#define ASSERT_FALSE(condition) if((condition)) { assert_error(&quot;expected false&quot;, __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#ac80ccfa08e0e798d3b930c75a105a462">   23</a></span>&#160;<span class="preprocessor">#define ASSERT_EQUAL(expected, actual) if((expected) != (actual)) { assert_error(&quot;expected &quot; + std::to_string(expected) + &quot; but got &quot; + std::to_string(actual), __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#af0207af10a625123409d88a0e9cba55c">   24</a></span>&#160;<span class="preprocessor">#define ASSERT_NOT_EQUAL(notExpected, actual) if((notExpected) == (actual)) { assert_error(&quot;expected &quot; + std::to_string(notExpected) + &quot; but got &quot; + std::to_string(actual), __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#a4d85795449b6475070fc5338f98f0b1d">   25</a></span>&#160;<span class="preprocessor">#define ASSERT_NULL(pointer) if((pointer) != nullptr) { assert_error(&quot;expected null pointer&quot;, __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="unit_test_8hpp.html#acfa93df6949aa575cb087d99832f4590">   26</a></span>&#160;<span class="preprocessor">#define ASSERT_NOT_NULL(pointer) if((pointer) == nullptr) { assert_error(&quot;expected not null pointer&quot;, __FILE__, __LINE__); *result = false; return; }</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_unit_test.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_unit_test.html">UnitTest</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_unit_test.html#aea787ebf84c18887b079db9ea82242ce">UnitTest</a>(std::string <a class="code" href="classtest_group.html">testGroup</a>, std::string <a class="code" href="class_unit_test.html#a4c13472336e7337af4b887bc8e0ff8e8">testName</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_unit_test.html#a1309480a9a4b9b4622b1a05f8a564869">runTest</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_unit_test.html#a5c5d1627c88cc2e48ca3a2ae100c25ba">assert_error</a>(std::string message, std::string file, <span class="keywordtype">int</span> line);</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_unit_test.html#ac021ea6f7ed8a4bd48b1d9ce83b8f8e1">   38</a></span>&#160;    std::string <a class="code" href="class_unit_test.html#ac021ea6f7ed8a4bd48b1d9ce83b8f8e1">getTestGroup</a>() { <span class="keywordflow">return</span> <a class="code" href="class_unit_test.html#a92d614f48e3fca51bf260c396592e76f">testGroup</a>; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_unit_test.html#a39d4bfed6f85bed8e879c4eaaf5f2fa4">   39</a></span>&#160;    std::string <a class="code" href="class_unit_test.html#a39d4bfed6f85bed8e879c4eaaf5f2fa4">getTestName</a>() { <span class="keywordflow">return</span> <a class="code" href="class_unit_test.html#a4c13472336e7337af4b887bc8e0ff8e8">testName</a>; }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_unit_test.html#a92d614f48e3fca51bf260c396592e76f">   41</a></span>&#160;    std::string <a class="code" href="class_unit_test.html#a92d614f48e3fca51bf260c396592e76f">testGroup</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_unit_test.html#a4c13472336e7337af4b887bc8e0ff8e8">   42</a></span>&#160;    std::string <a class="code" href="class_unit_test.html#a4c13472336e7337af4b887bc8e0ff8e8">testName</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_unit_test.html#a000dac45169b35cbb4e58b470d2e8b6b">do_runTest</a>(<span class="keywordtype">bool</span> *result) = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classtest_group.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classtest_group.html">testGroup</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtest_group.html#ae5bcdefa199183dbffe78ce51f7528f5">runAllTests</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtest_group.html#a2cacbd76282cddd68eaf2cca65190660">addTest</a>(<a class="code" href="class_unit_test.html">UnitTest</a>* test);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classtest_group.html#ab7b2fcd3a0660f007a6f5538a9050247">sendMessage</a>(std::string message);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classtest_group.html#a588c0fa88b5b7aeb3c22db76b499599b">   52</a></span>&#160;    <span class="keyword">static</span> std::vector&lt;UnitTest*&gt; <a class="code" href="classtest_group.html#a588c0fa88b5b7aeb3c22db76b499599b">tests</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classtest_group.html#ac1372c8776fa4aac0ad855e1a4a1600b">   53</a></span>&#160;    <a class="code" href="classtest_group.html#ac1372c8776fa4aac0ad855e1a4a1600b">testGroup</a>() {}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif // __UNIT_TEST_HPP__</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasstest_group_html_ac1372c8776fa4aac0ad855e1a4a1600b"><div class="ttname"><a href="classtest_group.html#ac1372c8776fa4aac0ad855e1a4a1600b">testGroup::testGroup</a></div><div class="ttdeci">testGroup()</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:53</div></div>
+<div class="ttc" id="aclasstest_group_html_a588c0fa88b5b7aeb3c22db76b499599b"><div class="ttname"><a href="classtest_group.html#a588c0fa88b5b7aeb3c22db76b499599b">testGroup::tests</a></div><div class="ttdeci">static std::vector&lt; UnitTest * &gt; tests</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:52</div></div>
+<div class="ttc" id="aclass_unit_test_html_a5c5d1627c88cc2e48ca3a2ae100c25ba"><div class="ttname"><a href="class_unit_test.html#a5c5d1627c88cc2e48ca3a2ae100c25ba">UnitTest::assert_error</a></div><div class="ttdeci">void assert_error(std::string message, std::string file, int line)</div><div class="ttdoc">print the error message and the file and line where the error occured</div><div class="ttdef"><b>Definition:</b> unitTest.cpp:33</div></div>
+<div class="ttc" id="aclass_unit_test_html_a92d614f48e3fca51bf260c396592e76f"><div class="ttname"><a href="class_unit_test.html#a92d614f48e3fca51bf260c396592e76f">UnitTest::testGroup</a></div><div class="ttdeci">std::string testGroup</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:41</div></div>
+<div class="ttc" id="aclass_unit_test_html_a39d4bfed6f85bed8e879c4eaaf5f2fa4"><div class="ttname"><a href="class_unit_test.html#a39d4bfed6f85bed8e879c4eaaf5f2fa4">UnitTest::getTestName</a></div><div class="ttdeci">std::string getTestName()</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:39</div></div>
+<div class="ttc" id="aclasstest_group_html"><div class="ttname"><a href="classtest_group.html">testGroup</a></div><div class="ttdef"><b>Definition:</b> unitTest.hpp:46</div></div>
+<div class="ttc" id="aclasstest_group_html_ab7b2fcd3a0660f007a6f5538a9050247"><div class="ttname"><a href="classtest_group.html#ab7b2fcd3a0660f007a6f5538a9050247">testGroup::sendMessage</a></div><div class="ttdeci">static void sendMessage(std::string message)</div></div>
+<div class="ttc" id="aclasstest_group_html_a2cacbd76282cddd68eaf2cca65190660"><div class="ttname"><a href="classtest_group.html#a2cacbd76282cddd68eaf2cca65190660">testGroup::addTest</a></div><div class="ttdeci">static void addTest(UnitTest *test)</div></div>
+<div class="ttc" id="aclass_unit_test_html"><div class="ttname"><a href="class_unit_test.html">UnitTest</a></div><div class="ttdoc">Classe de base pour les tests unitaires.</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:33</div></div>
+<div class="ttc" id="aclass_unit_test_html_aea787ebf84c18887b079db9ea82242ce"><div class="ttname"><a href="class_unit_test.html#aea787ebf84c18887b079db9ea82242ce">UnitTest::UnitTest</a></div><div class="ttdeci">UnitTest(std::string testGroup, std::string testName)</div><div class="ttdef"><b>Definition:</b> unitTest.cpp:4</div></div>
+<div class="ttc" id="aclass_unit_test_html_a000dac45169b35cbb4e58b470d2e8b6b"><div class="ttname"><a href="class_unit_test.html#a000dac45169b35cbb4e58b470d2e8b6b">UnitTest::do_runTest</a></div><div class="ttdeci">virtual void do_runTest(bool *result)=0</div></div>
+<div class="ttc" id="aclass_unit_test_html_ac021ea6f7ed8a4bd48b1d9ce83b8f8e1"><div class="ttname"><a href="class_unit_test.html#ac021ea6f7ed8a4bd48b1d9ce83b8f8e1">UnitTest::getTestGroup</a></div><div class="ttdeci">std::string getTestGroup()</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:38</div></div>
+<div class="ttc" id="aclasstest_group_html_ae5bcdefa199183dbffe78ce51f7528f5"><div class="ttname"><a href="classtest_group.html#ae5bcdefa199183dbffe78ce51f7528f5">testGroup::runAllTests</a></div><div class="ttdeci">static void runAllTests()</div></div>
+<div class="ttc" id="aclass_unit_test_html_a1309480a9a4b9b4622b1a05f8a564869"><div class="ttname"><a href="class_unit_test.html#a1309480a9a4b9b4622b1a05f8a564869">UnitTest::runTest</a></div><div class="ttdeci">bool runTest()</div><div class="ttdoc">run the test and print the result in the standart output test</div><div class="ttdef"><b>Definition:</b> unitTest.cpp:14</div></div>
+<div class="ttc" id="aclass_unit_test_html_a4c13472336e7337af4b887bc8e0ff8e8"><div class="ttname"><a href="class_unit_test.html#a4c13472336e7337af4b887bc8e0ff8e8">UnitTest::testName</a></div><div class="ttdeci">std::string testName</div><div class="ttdef"><b>Definition:</b> unitTest.hpp:42</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
